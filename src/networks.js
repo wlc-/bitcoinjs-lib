@@ -33,5 +33,15 @@ module.exports = {
     pubKeyHash: 0x30,
     scriptHash: 0x32,
     wif: 0xb0
+  },
+  myriad: {
+    messagePrefix: '\x19Myriad Signed Message:\n',
+    bip32: {
+      public: 0x0488B21E,
+      private: 0x0488ADE4
+    },
+    pubKeyHash: 0x32,
+    scriptHash: 0x09,
+    wif: 0xB2
   }
 }

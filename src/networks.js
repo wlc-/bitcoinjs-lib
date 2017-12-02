@@ -34,8 +34,8 @@ module.exports = {
     scriptHash: 0x32,
     wif: 0xb0
   },
-  myriad: {
-    messagePrefix: '\x19Myriad Signed Message:\n',
+  myriad: { // \x1B in prefix is length of prefix in hex
+    messagePrefix: '\x1BMyriadcoin Signed Message:\n',
     bip32: {
       public: 0x0488B21E,
       private: 0x0488ADE4

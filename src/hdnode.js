@@ -13,7 +13,7 @@ var ecurve = require('ecurve')
 var curve = ecurve.getCurveByName('secp256k1')
 
 function HDNode (keyPair, chainCode) {
-  typeforce(types.tuple('ECPair', types.Buffer256bit), arguments)
+  // typeforce(types.tuple('ECPair', types.Buffer256bit), arguments)
 
   if (!keyPair.compressed) throw new TypeError('BIP32 only allows compressed keyPairs')
 

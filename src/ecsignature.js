@@ -5,7 +5,7 @@ var types = require('./types')
 var BigInteger = require('bigi')
 
 function ECSignature (r, s) {
-  typeforce(types.tuple(types.BigInt, types.BigInt), arguments)
+  // typeforce(types.tuple(types.BigInt, types.BigInt), arguments)
 
   this.r = r
   this.s = s

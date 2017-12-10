@@ -29,7 +29,7 @@ function ECPair (d, Q, options) {
 
     this.d = d
   } else {
-    typeforce(types.ECPoint, Q)
+    // typeforce(types.ECPoint, Q)
 
     this.__Q = Q
   }

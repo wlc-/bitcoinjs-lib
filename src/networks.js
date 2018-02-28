@@ -11,7 +11,11 @@ module.exports = {
     },
     pubKeyHash: 0x00,
     scriptHash: 0x05,
-    wif: 0x80
+    wif: 0x80,
+    bridgeParameterArr: [
+      ['insight', 'https://insight.bitpay.com/api'],
+    ],
+    ticker: 'BTC'
   },
   testnet: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -22,7 +26,11 @@ module.exports = {
     },
     pubKeyHash: 0x6f,
     scriptHash: 0xc4,
-    wif: 0xef
+    wif: 0xef,
+    bridgeParameterArr: [
+      ['insight', 'https://test-insight.bitpay.com/api'],
+    ],
+    ticker: 'BTC'
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
@@ -32,7 +40,8 @@ module.exports = {
     },
     pubKeyHash: 0x30,
     scriptHash: 0x32,
-    wif: 0xb0
+    wif: 0xb0,
+    ticker: 'LTC'
   },
   myriad: { // \x1B in prefix is length of prefix in hex
     messagePrefix: '\x1BMyriadcoin Signed Message:\n',
@@ -42,6 +51,11 @@ module.exports = {
     },
     pubKeyHash: 0x32,
     scriptHash: 0x09,
-    wif: 0xB2
+    wif: 0xB2,
+    bridgeParameterArr: [
+      ['insight', 'https://myriadexplorer.com/api'],
+      ['insight', 'http://insight-myr.cryptap.us/api']
+    ],
+    ticker: 'XMY'
   }
 }

@@ -32,7 +32,7 @@ module.exports = {
     bridgeParameterArr: [
       ['insight', 'https://test-insight.bitpay.com/api'],
     ],
-    ticker: 'BTC',
+    ticker: 'TBTC',
     qrScheme: 'bitcoin',
     title: 'Bitcoin'
   },

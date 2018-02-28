@@ -15,7 +15,9 @@ module.exports = {
     bridgeParameterArr: [
       ['insight', 'https://insight.bitpay.com/api'],
     ],
-    ticker: 'BTC'
+    ticker: 'BTC',
+    qrScheme: 'bitcoin', // https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
+    title: 'Bitcoin'
   },
   testnet: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -30,7 +32,9 @@ module.exports = {
     bridgeParameterArr: [
       ['insight', 'https://test-insight.bitpay.com/api'],
     ],
-    ticker: 'BTC'
+    ticker: 'BTC',
+    qrScheme: 'bitcoin',
+    title: 'Bitcoin'
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
@@ -41,7 +45,9 @@ module.exports = {
     pubKeyHash: 0x30,
     scriptHash: 0x32,
     wif: 0xb0,
-    ticker: 'LTC'
+    ticker: 'LTC',
+    qrScheme: 'litecoin',
+    title: 'Litecoin'
   },
   myriad: { // \x1B in prefix is length of prefix in hex
     messagePrefix: '\x1BMyriadcoin Signed Message:\n',
@@ -56,6 +62,8 @@ module.exports = {
       ['insight', 'https://myriadexplorer.com/api'],
       ['insight', 'http://insight-myr.cryptap.us/api']
     ],
-    ticker: 'XMY'
+    ticker: 'XMY',
+    qrScheme: 'myriad',
+    title: 'Myriad'
   }
 }

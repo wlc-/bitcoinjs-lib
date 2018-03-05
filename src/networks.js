@@ -1,6 +1,3 @@
-// https://en.bitcoin.it/wiki/List_of_address_prefixes
-// Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
-
 module.exports = {
   bitcoin: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -17,9 +14,15 @@ module.exports = {
     ticker: 'BTC',
     qrScheme: 'bitcoin', // https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH', 'P2WPKH'],
+    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://insight.bitpay.com/api'],
+      ['insight', 'https://btc-bitcore1.trezor.io/api'],
+      ['insight', 'https://btc-bitcore2.trezor.io/api'],
+      ['insight', 'https://btc-bitcore3.trezor.io/api'],
+      ['insight', 'https://btc-bitcore4.trezor.io/api'],
+      ['insight', 'https://btc-bitcore5.trezor.io/api'],
+      ['insight', 'https://btc-bitcore6.trezor.io/api'],
+      ['insight', 'https://btc-bitcore7.trezor.io/api'],
     ],
   },
   testnet: {
@@ -37,9 +40,11 @@ module.exports = {
     ticker: 'TBTC',
     qrScheme: 'bitcoin',
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH', 'P2WPKH'],
+    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://test-insight.bitpay.com/api'],
+      ['insight', 'https://testnet-bitcore1.trezor.io/api'],
+      ['insight', 'https://testnet-bitcore2.trezor.io/api'],
+      ['insight', 'https://testnet-bitcore3.trezor.io/api'],
     ],
   },
   litecoin: {
@@ -57,9 +62,11 @@ module.exports = {
     ticker: 'LTC',
     qrScheme: 'litecoin',
     title: 'Litecoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH', 'P2WPKH'],
+    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://insight.litecore.io/api'],
+      ['insight', 'https://ltc-bitcore1.trezor.io/api'],
+      ['insight', 'https://ltc-bitcore2.trezor.io/api'],
+      ['insight', 'https://ltc-bitcore3.trezor.io/api'],
     ]
   },
   myriad: { // \x1B in prefix is length of prefix in hex

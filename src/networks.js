@@ -14,7 +14,7 @@ module.exports = {
     ticker: 'BTC',
     qrScheme: 'bitcoin', // https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
       ['insight', 'https://btc-bitcore1.trezor.io/api'],
       ['insight', 'https://btc-bitcore2.trezor.io/api'],
@@ -40,7 +40,7 @@ module.exports = {
     ticker: 'TBTC',
     qrScheme: 'bitcoin',
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
       ['insight', 'https://testnet-bitcore1.trezor.io/api'],
       ['insight', 'https://testnet-bitcore2.trezor.io/api'],
@@ -62,7 +62,7 @@ module.exports = {
     ticker: 'LTC',
     qrScheme: 'litecoin',
     title: 'Litecoin',
-    supportedAddressTypes: ['P2PKH', 'P2SH-P2WPKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
       ['insight', 'https://ltc-bitcore1.trezor.io/api'],
       ['insight', 'https://ltc-bitcore2.trezor.io/api'],

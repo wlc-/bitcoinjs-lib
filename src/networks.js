@@ -16,13 +16,9 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
-      ['insight', 'https://btc-bitcore1.trezor.io/api'],
-      ['insight', 'https://btc-bitcore2.trezor.io/api'],
-      ['insight', 'https://btc-bitcore3.trezor.io/api'],
-      ['insight', 'https://btc-bitcore4.trezor.io/api'],
-      ['insight', 'https://btc-bitcore5.trezor.io/api'],
-      ['insight', 'https://btc-bitcore6.trezor.io/api'],
-      ['insight', 'https://btc-bitcore7.trezor.io/api'],
+      ['insight', 'https://btc-bitcore1.coinid.org/api'],
+      ['insight', 'https://btc-bitcore3.coinid.org/api'],
+      ['insight', 'https://btc-bitcore4.coinid.org/api'],
     ],
   },
   testnet: {
@@ -42,9 +38,7 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
-      ['insight', 'https://testnet-bitcore1.trezor.io/api'],
-      ['insight', 'https://testnet-bitcore2.trezor.io/api'],
-      ['insight', 'https://testnet-bitcore3.trezor.io/api'],
+      ['insight', 'https://testnet-bitcore2.coinid.org/api'],
     ],
   },
   litecoin: {
@@ -64,9 +58,9 @@ module.exports = {
     title: 'Litecoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
-      ['insight', 'https://ltc-bitcore1.trezor.io/api'],
-      ['insight', 'https://ltc-bitcore2.trezor.io/api'],
-      ['insight', 'https://ltc-bitcore3.trezor.io/api'],
+      ['insight', 'https://ltc-bitcore1.coinid.org/api'],
+      ['insight', 'https://ltc-bitcore2.coinid.org/api'],
+      ['insight', 'https://ltc-bitcore3.coinid.org/api'],
     ]
   },
   myriad: { // \x1B in prefix is length of prefix in hex

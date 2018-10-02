@@ -38,6 +38,7 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
     bridgeParameterArr: [
+      ['insight', 'https://testnet-bitcore1.coinid.org/api'],
       ['insight', 'https://testnet-bitcore2.coinid.org/api'],
     ],
   },

@@ -36,10 +36,9 @@ module.exports = {
     ticker: 'TBTC',
     qrScheme: 'bitcoin',
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://testnet-bitcore1.coinid.org/api'],
-      ['insight', 'https://testnet-bitcore2.coinid.org/api'],
+      ['blockbook', 'wss://51.15.16.53:19130'],
     ],
   },
   litecoin: {
@@ -79,10 +78,9 @@ module.exports = {
     ticker: 'XMY',
     qrScheme: 'myriad',
     title: 'Myriad',
-    supportedAddressTypes: ['P2PKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://myriadexplorer.com/api'],
-      ['insight', 'http://insight-myr.cryptap.us/api']
+      ['blockbook', 'wss://blockbook.myralicious.com']
     ]
   }
 }

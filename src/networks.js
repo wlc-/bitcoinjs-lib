@@ -14,11 +14,9 @@ module.exports = {
     ticker: 'BTC',
     qrScheme: 'bitcoin', // https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
     title: 'Bitcoin',
-    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://btc-bitcore1.coinid.org/api'],
-      ['insight', 'https://btc-bitcore3.coinid.org/api'],
-      ['insight', 'https://btc-bitcore4.coinid.org/api'],
+      ['blockbook', 'wss://btc-blockbook1.coinid.org']
     ],
   },
   testnet: {
@@ -38,7 +36,7 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['blockbook', 'wss://51.15.16.53:19130'],
+      ['blockbook', 'wss://testnet-blockbook1.coinid.org']
     ],
   },
   litecoin: {
@@ -80,7 +78,7 @@ module.exports = {
     title: 'Myriad',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['blockbook', 'wss://blockbook.myralicious.com']
+      ['blockbook', 'wss://xmy-blockbook1.coinid.org']
     ]
   }
 }

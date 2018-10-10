@@ -1,3 +1,16 @@
+const bcrypto = require('./crypto');
+
+const hashFunctions = {
+  address: bcrypto.hash256, // sha256x2
+  transaction: bcrypto.hash256
+};
+
+
+const groestlHashFunctions = {
+  address: bcrypto.groestl, // sha256x2
+  transaction: bcrypto.sha256
+};
+
 module.exports = {
   bitcoin: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -18,6 +31,7 @@ module.exports = {
     bridgeParameterArr: [
       ['blockbook', 'wss://btc-blockbook1.coinid.org']
     ],
+    hashFunctions,
   },
   testnet: {
     messagePrefix: '\x18Bitcoin Signed Message:\n',
@@ -36,8 +50,9 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['blockbook', 'wss://testnet-blockbook1.coinid.org']
+      ['blockbook', 'wss://testnet-blockbook1.coinid.org'],
     ],
+    hashFunctions,
   },
   litecoin: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
@@ -59,7 +74,8 @@ module.exports = {
       ['insight', 'https://ltc-bitcore1.coinid.org/api'],
       ['insight', 'https://ltc-bitcore2.coinid.org/api'],
       ['insight', 'https://ltc-bitcore3.coinid.org/api'],
-    ]
+    ],
+    hashFunctions,
   },
   myriad: { // \x1B in prefix is length of prefix in hex
     messagePrefix: '\x1BMyriadcoin Signed Message:\n',
@@ -78,7 +94,28 @@ module.exports = {
     title: 'Myriad',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['blockbook', 'wss://xmy-blockbook1.coinid.org']
-    ]
-  }
+      ['blockbook', 'wss://xmy-blockbook1.coinid.org'],
+    ],
+    hashFunctions,
+  },
+  groestlcoin: {
+    messagePrefix: '\x1cGroestlCoin Signed Message:\n',
+    bip32: {
+      public: 0x0488b21e,
+      private: 0x0488ade4
+    },
+    pubKeyHash: 0x24,
+    scriptHash: 0x05,
+    wif: 0x80,
+    confirmations: 12,
+    bip44Derivation: 17,
+    ticker: 'GRS',
+    qrScheme: 'groestlcoin',
+    title: 'Groestlcoin',
+    supportedAddressTypes: ['P2PKH'],
+    bridgeParameterArr: [
+      ['insight', 'https://groestlsight.groestlcoin.org/api'],
+    ],
+    hashFunctions: groestlHashFunctions,
+  },
 }

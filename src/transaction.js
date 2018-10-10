@@ -6,6 +6,7 @@ var opcodes = require('bitcoin-ops')
 var typeforce = require('typeforce')
 var types = require('./types')
 var varuint = require('varuint-bitcoin')
+var networks = require('./networks')
 
 function varSliceSize (someScript) {
   var length = someScript.length
@@ -21,11 +22,12 @@ function vectorSize (someVector) {
   }, 0)
 }
 
-function Transaction () {
+function Transaction (network) {
   this.version = 1
   this.locktime = 0
   this.ins = []
   this.outs = []
+  this.network = network || networks.bitcoin
 }
 
 Transaction.DEFAULT_SEQUENCE = 0xffffffff
@@ -313,7 +315,7 @@ Transaction.prototype.hashForSignature = function (inIndex, prevOutScript, hashT
   buffer.writeInt32LE(hashType, buffer.length - 4)
   txTmp.__toBuffer(buffer, 0, false)
 
-  return bcrypto.hash256(buffer)
+  return this.network.hashFunctions.transaction(buffer)
 }
 
 Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value, hashType) {
@@ -342,7 +344,7 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
       writeUInt32(txIn.index)
     })
 
-    hashPrevouts = bcrypto.hash256(tbuffer)
+    hashPrevouts = this.network.hashFunctions.transaction(tbuffer)
   }
 
   if (!(hashType & Transaction.SIGHASH_ANYONECANPAY) &&
@@ -355,7 +357,7 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
       writeUInt32(txIn.sequence)
     })
 
-    hashSequence = bcrypto.hash256(tbuffer)
+    hashSequence = this.network.hashFunctions.transaction(tbuffer)
   }
 
   if ((hashType & 0x1f) !== Transaction.SIGHASH_SINGLE &&
@@ -372,7 +374,7 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
       writeVarSlice(out.script)
     })
 
-    hashOutputs = bcrypto.hash256(tbuffer)
+    hashOutputs = this.network.hashFunctions.transaction(tbuffer)
   } else if ((hashType & 0x1f) === Transaction.SIGHASH_SINGLE && inIndex < this.outs.length) {
     var output = this.outs[inIndex]
 
@@ -381,7 +383,7 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
     writeUInt64(output.value)
     writeVarSlice(output.script)
 
-    hashOutputs = bcrypto.hash256(tbuffer)
+    hashOutputs = this.network.hashFunctions.transaction(tbuffer)
   }
 
   tbuffer = Buffer.allocUnsafe(156 + varSliceSize(prevOutScript))
@@ -399,11 +401,11 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
   writeSlice(hashOutputs)
   writeUInt32(this.locktime)
   writeUInt32(hashType)
-  return bcrypto.hash256(tbuffer)
+  return this.network.hashFunctions.transaction(tbuffer)
 }
 
 Transaction.prototype.getHash = function () {
-  return bcrypto.hash256(this.__toBuffer(undefined, undefined, false))
+  return network.hashFunctions.transaction(this.__toBuffer(undefined, undefined, false))
 }
 
 Transaction.prototype.getId = function () {

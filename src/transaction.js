@@ -405,7 +405,7 @@ Transaction.prototype.hashForWitnessV0 = function (inIndex, prevOutScript, value
 }
 
 Transaction.prototype.getHash = function () {
-  return network.hashFunctions.transaction(this.__toBuffer(undefined, undefined, false))
+  return this.network.hashFunctions.transaction(this.__toBuffer(undefined, undefined, false))
 }
 
 Transaction.prototype.getId = function () {

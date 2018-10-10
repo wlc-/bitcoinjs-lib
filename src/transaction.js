@@ -48,7 +48,7 @@ var BLANK_OUTPUT = {
   valueBuffer: VALUE_UINT64_MAX
 }
 
-Transaction.fromBuffer = function (buffer, __noStrict) {
+Transaction.fromBuffer = function (buffer, __noStrict, network) {
   var offset = 0
   function readSlice (n) {
     offset += n
@@ -90,7 +90,7 @@ Transaction.fromBuffer = function (buffer, __noStrict) {
     return vector
   }
 
-  var tx = new Transaction()
+  var tx = new Transaction(network)
   tx.version = readInt32()
 
   var marker = buffer.readUInt8(offset)
@@ -139,8 +139,8 @@ Transaction.fromBuffer = function (buffer, __noStrict) {
   return tx
 }
 
-Transaction.fromHex = function (hex) {
-  return Transaction.fromBuffer(Buffer.from(hex, 'hex'))
+Transaction.fromHex = function (hex, network) {
+  return Transaction.fromBuffer(Buffer.from(hex, 'hex'), undefined, network)
 }
 
 Transaction.isCoinbaseHash = function (buffer) {
@@ -220,8 +220,8 @@ Transaction.prototype.__byteLength = function (__allowWitness) {
   )
 }
 
-Transaction.prototype.clone = function () {
-  var newTx = new Transaction()
+Transaction.prototype.clone = function (network) {
+  var newTx = new Transaction(network)
   newTx.version = this.version
   newTx.locktime = this.locktime
 

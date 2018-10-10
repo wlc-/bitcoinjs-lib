@@ -472,7 +472,7 @@ function TransactionBuilder (network, maximumFeeRate) {
   this.maximumFeeRate = maximumFeeRate || 1000
 
   this.inputs = []
-  this.tx = new Transaction()
+  this.tx = new Transaction(network)
 }
 
 TransactionBuilder.prototype.setLockTime = function (locktime) {

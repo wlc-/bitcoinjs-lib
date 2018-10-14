@@ -2,13 +2,13 @@ const bcrypto = require('./crypto');
 
 const hashFunctions = {
   address: bcrypto.hash256, // sha256x2
-  transaction: bcrypto.hash256
+  transaction: bcrypto.hash256, // sha256x2
 };
 
 
 const groestlHashFunctions = {
-  address: bcrypto.groestl, // sha256x2
-  transaction: bcrypto.sha256
+  address: bcrypto.groestl,
+  transaction: bcrypto.sha256,
 };
 
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['blockbook', 'wss://btc-blockbook1.coinid.org']
+      ['blockbook', 'wss://btc-blockbook1.coinid.org'],
+      ['blockbook', 'wss://btc-blockbook2.coinid.org'],
+      ['blockbook', 'wss://btc-blockbook3.coinid.org'],
     ],
     hashFunctions,
   },
@@ -51,6 +53,8 @@ module.exports = {
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
       ['blockbook', 'wss://testnet-blockbook1.coinid.org'],
+      ['blockbook', 'wss://testnet-blockbook2.coinid.org'],
+      ['blockbook', 'wss://testnet-blockbook3.coinid.org'],
     ],
     hashFunctions,
   },
@@ -95,6 +99,8 @@ module.exports = {
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
       ['blockbook', 'wss://xmy-blockbook1.coinid.org'],
+      ['blockbook', 'wss://xmy-blockbook2.coinid.org'],
+      ['blockbook', 'wss://xmy-blockbook3.coinid.org'],
     ],
     hashFunctions,
   },

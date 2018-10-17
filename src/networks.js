@@ -106,6 +106,7 @@ module.exports = {
   },
   groestlcoin: {
     messagePrefix: '\x1cGroestlCoin Signed Message:\n',
+    bech32: 'grs',
     bip32: {
       public: 0x0488b21e,
       private: 0x0488ade4

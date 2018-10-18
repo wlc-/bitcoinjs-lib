@@ -119,9 +119,9 @@ module.exports = {
     ticker: 'GRS',
     qrScheme: 'groestlcoin',
     title: 'Groestlcoin',
-    supportedAddressTypes: ['P2PKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://groestlsight.groestlcoin.org/api'],
+      ['blockbook', 'wss://blockbook.groestlcoin.org'],
     ],
     hashFunctions: groestlHashFunctions,
   },

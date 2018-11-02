@@ -94,7 +94,7 @@ module.exports = {
     confirmations: 12,
     bip44Derivation: 90,
     ticker: 'XMY',
-    qrScheme: 'myriad',
+    qrScheme: 'myriadcoin',
     title: 'Myriad',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [

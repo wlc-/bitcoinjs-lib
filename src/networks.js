@@ -5,7 +5,6 @@ const hashFunctions = {
   transaction: bcrypto.hash256, // sha256x2
 };
 
-
 const groestlHashFunctions = {
   address: bcrypto.groestl,
   transaction: bcrypto.sha256,
@@ -33,6 +32,7 @@ module.exports = {
       ['blockbook', 'wss://btc-blockbook2.coinid.org'],
       ['blockbook', 'wss://btc-blockbook3.coinid.org'],
     ],
+    blockTime: 10.0,
     hashFunctions,
   },
   testnet: {
@@ -56,6 +56,7 @@ module.exports = {
       ['blockbook', 'wss://testnet-blockbook2.coinid.org'],
       ['blockbook', 'wss://testnet-blockbook3.coinid.org'],
     ],
+    blockTime: 10.0,
     hashFunctions,
   },
   litecoin: {
@@ -79,6 +80,7 @@ module.exports = {
       ['insight', 'https://ltc-bitcore2.coinid.org/api'],
       ['insight', 'https://ltc-bitcore3.coinid.org/api'],
     ],
+    blockTime: 2.5,
     hashFunctions,
   },
   myriad: { // \x1B in prefix is length of prefix in hex
@@ -102,6 +104,7 @@ module.exports = {
       ['blockbook', 'wss://xmy-blockbook2.coinid.org'],
       ['blockbook', 'wss://xmy-blockbook3.coinid.org'],
     ],
+    blockTime: 1.0,
     hashFunctions,
   },
   groestlcoin: {
@@ -123,6 +126,7 @@ module.exports = {
     bridgeParameterArr: [
       ['blockbook', 'wss://blockbook.groestlcoin.org'],
     ],
+    blockTime: 1.0,
     hashFunctions: groestlHashFunctions,
   },
 }

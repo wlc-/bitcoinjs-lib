@@ -143,7 +143,7 @@ module.exports = {
     bip44Derivation: 1,
     ticker: 'tGRS',
     qrScheme: 'groestlcoin',
-    title: 'Groestlcoin Testnet',
+    title: 'GRS Testnet',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
       ['blockbook', 'wss://blockbook-test.groestlcoin.org'],

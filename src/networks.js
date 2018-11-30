@@ -47,7 +47,7 @@ module.exports = {
     wif: 0xef,
     confirmations: 6,
     bip44Derivation: 1,
-    ticker: 'TBTC',
+    ticker: 'tBTC',
     qrScheme: 'bitcoin',
     title: 'Bitcoin',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
@@ -125,6 +125,28 @@ module.exports = {
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
       ['blockbook', 'wss://blockbook.groestlcoin.org'],
+    ],
+    blockTime: 1.0,
+    hashFunctions: groestlHashFunctions,
+  },
+  "groestlcoin-testnet": {
+    messagePrefix: '\x1cGroestlCoin Signed Message:\n',
+    bech32: 'tgrs',
+    bip32: {
+      public: 0x043587cf,
+      private: 0x04358394
+    },
+    pubKeyHash: 0x6f,
+    scriptHash: 0xc4,
+    wif: 0xef,
+    confirmations: 12,
+    bip44Derivation: 1,
+    ticker: 'tGRS',
+    qrScheme: 'groestlcoin',
+    title: 'Groestlcoin Testnet',
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
+    bridgeParameterArr: [
+      ['blockbook', 'wss://blockbook-test.groestlcoin.org'],
     ],
     blockTime: 1.0,
     hashFunctions: groestlHashFunctions,

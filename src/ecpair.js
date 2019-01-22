@@ -58,7 +58,7 @@ ECPair.fromPublicKeyBuffer = function (buffer, network) {
 }
 
 ECPair.fromWIF = function (string, network) {
-  var decoded = wif.decode(string)
+  var decoded = wif.decode(string, undefined, network)
   var version = decoded.version
 
   // list of networks?
@@ -121,7 +121,7 @@ ECPair.prototype.sign = function (hash) {
 ECPair.prototype.toWIF = function () {
   if (!this.d) throw new Error('Missing private key')
 
-  return wif.encode(this.network.wif, this.d.toBuffer(32), this.compressed)
+  return wif.encode(this.network.wif, this.d.toBuffer(32), this.compressed, this.network)
 }
 
 ECPair.prototype.verify = function (hash, signature) {

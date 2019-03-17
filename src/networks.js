@@ -49,7 +49,7 @@ module.exports = {
     bip44Derivation: 1,
     ticker: 'tBTC',
     qrScheme: 'bitcoin',
-    title: 'Bitcoin',
+    title: 'Testnet',
     supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
       ['blockbook', 'wss://testnet-blockbook1.coinid.org'],

@@ -1,13 +1,15 @@
 const bcrypto = require('./crypto');
 
 const hashFunctions = {
-  address: bcrypto.hash256, // sha256x2
-  transaction: bcrypto.hash256, // sha256x2
+  address: bcrypto.hash256,
+  transaction: bcrypto.hash256,
+  message: bcrypto.hash256,
 };
 
 const groestlHashFunctions = {
   address: bcrypto.groestl,
   transaction: bcrypto.sha256,
+  message: bcrypto.sha256,
 };
 
 module.exports = {

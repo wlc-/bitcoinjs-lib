@@ -76,11 +76,9 @@ module.exports = {
     ticker: 'LTC',
     qrScheme: 'litecoin',
     title: 'Litecoin',
-    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH'],
+    supportedAddressTypes: ['P2SH-P2WPKH', 'P2PKH', 'P2WPKH'],
     bridgeParameterArr: [
-      ['insight', 'https://ltc-bitcore1.coinid.org/api'],
-      ['insight', 'https://ltc-bitcore2.coinid.org/api'],
-      ['insight', 'https://ltc-bitcore3.coinid.org/api'],
+      ['blockbook', 'wss://ltc1.trezor.io/'],
     ],
     blockTime: 2.5,
     hashFunctions,

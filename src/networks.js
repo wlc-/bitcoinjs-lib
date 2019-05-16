@@ -20,6 +20,20 @@ module.exports = {
       public: 0x0488b21e,
       private: 0x0488ade4
     },
+    slip132: {
+      'P2PKH': {
+        public: 0x0488b21e,
+        private: 0x0488ade4
+      },
+      'P2SH-P2WPKH': {
+        public: 0x049d7cb2,
+        private: 0x049d7878
+      },
+      'P2WPKH': {
+        public: 0x04b24746,
+        private: 0x04b2430c
+      }
+    },
     pubKeyHash: 0x00,
     scriptHash: 0x05,
     wif: 0x80,
@@ -43,6 +57,20 @@ module.exports = {
     bip32: {
       public: 0x043587cf,
       private: 0x04358394
+    },
+    slip132: {
+      'P2PKH': {
+        public: 0x043587cf,
+        private: 0x04358394
+      },
+      'P2SH-P2WPKH': {
+        public: 0x044a5262,
+        private: 0x044a4e28
+      },
+      'P2WPKH': {
+        public: 0x045f1cf6,
+        private: 0x045f18bc
+      }
     },
     pubKeyHash: 0x6f,
     scriptHash: 0xc4,
@@ -68,6 +96,21 @@ module.exports = {
       public: 0x019da462,
       private: 0x019d9cfe
     },
+    slip132: {
+      'P2PKH': {
+        public: 0x019da462,
+        private: 0x019d9cfe
+      },
+      'P2SH-P2WPKH': {
+        public: 0x01b26ef6,
+        private: 0x01b26792
+      },
+      'P2WPKH': {
+        public: 0x04b24746,
+        private: 0x04b2430c
+      }
+    },
+    allowBitcoinSlip132: true,
     pubKeyHash: 0x30,
     scriptHash: 0x32,
     wif: 0xb0,
@@ -89,6 +132,20 @@ module.exports = {
     bip32: {
       public: 0x0488B21E,
       private: 0x0488ADE4
+    },
+    slip132: {
+      'P2PKH': {
+        public: 0x0488b21e,
+        private: 0x0488ade4
+      },
+      'P2SH-P2WPKH': {
+        public: 0x049d7cb2,
+        private: 0x049d7878
+      },
+      'P2WPKH': {
+        public: 0x04b24746,
+        private: 0x04b2430c
+      }
     },
     pubKeyHash: 0x32,
     scriptHash: 0x09,
@@ -114,6 +171,20 @@ module.exports = {
       public: 0x0488b21e,
       private: 0x0488ade4
     },
+    slip132: {
+      'P2PKH': {
+        public: 0x0488b21e,
+        private: 0x0488ade4
+      },
+      'P2SH-P2WPKH': {
+        public: 0x049d7cb2,
+        private: 0x049d7878
+      },
+      'P2WPKH': {
+        public: 0x04b24746,
+        private: 0x04b2430c
+      }
+    },
     pubKeyHash: 0x24,
     scriptHash: 0x05,
     wif: 0x80,
@@ -135,6 +206,20 @@ module.exports = {
     bip32: {
       public: 0x043587cf,
       private: 0x04358394
+    },
+    slip132: {
+      'P2PKH': {
+        public: 0x043587cf,
+        private: 0x04358394
+      },
+      'P2SH-P2WPKH': {
+        public: 0x044a5262,
+        private: 0x044a4e28
+      },
+      'P2WPKH': {
+        public: 0x045f1cf6,
+        private: 0x045f18bc
+      }
     },
     pubKeyHash: 0x6f,
     scriptHash: 0xc4,
